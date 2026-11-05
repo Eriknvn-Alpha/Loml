@@ -1,0 +1,233 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For My Angel ♡</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Georgia, serif;
+  background: linear-gradient(135deg, #ffe0ed, #ffc2dc, #fff0f6);
+  color: #a74670;
+  overflow-x: hidden;
+}
+
+.hearts {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.heart {
+  position: absolute;
+  top: -30px;
+  color: #ff75ad;
+  font-size: 18px;
+  animation: fall linear infinite;
+  opacity: .7;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(110vh) rotate(360deg);
+  }
+}
+
+.container {
+  position: relative;
+  z-index: 1;
+  width: 90%;
+  max-width: 550px;
+  margin: 50px auto;
+  padding: 25px;
+  text-align: center;
+  background: rgba(255,255,255,.65);
+  border: 2px solid white;
+  border-radius: 25px;
+  box-shadow: 0 10px 35px #e78bad55;
+}
+
+.lily {
+  font-size: 45px;
+  margin: 5px;
+}
+
+h1 {
+  font-size: 27px;
+  color: #d65c91;
+  line-height: 1.4;
+}
+
+.subtitle {
+  font-size: 13px;
+  letter-spacing: 2px;
+  color: #c47a9c;
+}
+
+button {
+  background: #f28bb5;
+  color: white;
+  border: none;
+  padding: 13px 22px;
+  border-radius: 30px;
+  font-size: 14px;
+  cursor: pointer;
+  margin: 8px;
+  box-shadow: 0 4px 12px #e98bb055;
+  transition: .3s;
+}
+
+button:hover {
+  transform: scale(1.06);
+  background: #dc699b;
+}
+
+#letter {
+  display: none;
+  text-align: left;
+  line-height: 1.9;
+  font-size: 14px;
+  white-space: pre-line;
+  margin-top: 25px;
+  animation: appear 1.2s ease;
+}
+
+@keyframes appear {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.footer {
+  margin-top: 25px;
+  font-size: 12px;
+  color: #c47a9c;
+}
+
+.music {
+  font-size: 12px;
+  margin-top: 15px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="hearts" id="hearts"></div>
+
+<div class="container">
+
+  <div class="lily">𓍢ִ໋🌷͙֒</div>
+
+  <div class="subtitle">
+    A LITTLE SECRET FROM SOMEONE ♡
+  </div>
+
+  <h1>For My Angel who lights up my life♡⁠˖</h1>
+
+  <p>✧ A letter written with love ✧</p>
+
+  <button onclick="openLetter()" id="openBtn">
+    Open my letter 💌
+  </button>
+
+  <div id="letter">
+Hi stranger i hope u read this
+
+Apa kabar Rep, Kok sifat km dingin banget ya skrg bukanya ngademin malah ngangenin 😹, kamu lagi kmna aja, kok gk ada kabar padahal aku udah sabar nungguin kamu yang gk ada kabar... anjay hehe garing yaa
+
+Jujur aku udah lama ngagumin km rep sejak awal kita kenal kayak aku langsung kepleset jatuh cinta kepada Repi, ehh oke srius, ntah kenapa kok kita malah kaya asing gini Rep, Pengen deh balik ke masa masa aku excited bgt buat Mabar n chatan ma km, btw aku udh denger ktnya km ilfeel ya sama aku? why plss tell me be the man you want to be, sifat mana yg km gasuka dari aku aku usahain buat ga ngerepotin km i want u be ur fav boy. Btw aku diem diem slalu ngikutin interest km hehe.
+
+Bilangin ke ortu km makasih udah ngelahirin cewek idaman aku😏,garing bat jir sori.. ok lanjut, ntah kenapa org' kalo ngeliat km pasti yg di liat sifat nya.. like "ohh si repi org nya giniah,sikapnya friendly lah" like wtf, tapi aku ngeliat km sebagai cewe yang damnn bruh u COOL ASF,selera musik km bagus,FASHION KM DAMNNNNNN,kalo paras sih biasa aja kayak bidadari pada umumnya,interest km keren,km orgnya lucuk sifatnya juga kek nyambung aja kalo ngobrol, Itu hal yg bikin aku suka sama km i love you 3000x times💗💗
+
+Aku gak ngrepin jawaban tertentu. Aku cuma pengen kamu tau apa yang selama ini aku rasain,sekalipun aku harus nunggu aku bakal nunggu skalian aku upgrade diri aku sendiri.
+
+Whatever your answer is, thank you for being someone worth knowing.
+
+    <center>
+      <p>♡ ───────── ♡</p>
+      <div class="lily">𓍢ִ໋🌷͙֒</div>
+      <p>With love, your secret admirer.</p>
+      <p>♡</p>
+    </center>
+  </div>
+
+  <div class="music">
+    🎵 Scott Street – Phoebe Bridgers
+    <br>
+    <button onclick="toggleMusic()" id="musicBtn">
+      ▶ Play Music
+    </button>
+  </div>
+
+  <div class="footer">
+    made with love, just for you ♡
+    <br> 𓆩♡𓆪
+  </div>
+
+</div>
+
+<!-- Put your legally obtained audio file beside index.html -->
+<audio id="song" loop>
+  <source src="scott-street.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+
+// Falling pixel hearts
+const heartContainer = document.getElementById("hearts");
+
+for (let i = 0; i < 35; i++) {
+  const heart = document.createElement("div");
+  heart.className = "heart";
+  heart.innerHTML = ["♥", "♡", "❤", "💗"][Math.floor(Math.random()*4)];
+
+  heart.style.left = Math.random() * 100 + "%";
+  heart.style.animationDuration = (5 + Math.random()*9) + "s";
+  heart.style.animationDelay = Math.random() * 8 + "s";
+  heart.style.fontSize = (10 + Math.random()*15) + "px";
+
+  heartContainer.appendChild(heart);
+}
+
+// Open letter
+function openLetter() {
+  const letter = document.getElementById("letter");
+  const button = document.getElementById("openBtn");
+
+  letter.style.display = "block";
+  button.innerHTML = "Our little secret ♡";
+  button.disabled = true;
+}
+
+// Music
+const song = document.getElementById("song");
+const musicBtn = document.getElementById("musicBtn");
+
+function toggleMusic() {
+  if (song.paused) {
+    song.play().then(() => {
+      musicBtn.innerHTML = "❚❚ Pause Music";
+    }).catch(() => {
+      alert("Please check your music file!");
+    });
+  } else {
+    song.pause();
+    musicBtn.innerHTML = "▶ Play Music";
+  }
+}
+
+</script>
+
+</body>
+</html>
