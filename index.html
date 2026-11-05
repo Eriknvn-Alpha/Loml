@@ -146,7 +146,7 @@ Hi stranger i hope u read this
 
 Apa kabar Rep, Kok sifat km dingin banget ya skrg bukanya ngademin malah ngangenin 😹, kamu lagi kmna aja, kok gk ada kabar padahal aku udah sabar nungguin kamu yang gk ada kabar... anjay hehe garing yaa
 
-Jujur aku udah lama ngagumin km rep sejak awal kita kenal kayak aku langsung kepleset jatuh cinta kepada Repi, ehh oke srius, ntah kenapa kok kita malah kaya asing gini Rep, Pengen deh balik ke masa masa aku excited bgt buat Mabar n chatan ma km, btw aku udh denger ktnya km ilfeel ya sama aku? why plss tell me be the man you want to be, sifat mana yg km gasuka dari aku aku usahain buat ga ngerepotin km i want u be ur fav boy. Btw aku diem diem slalu ngikutin interest km hehe.
+Jujur aku udah lama ngagumin km rep sejak awal kita kenal kayak aku langsung terpesona sm indahnya km, ehh oke srius, ntah kenapa kok kita malah kaya asing gini Rep, Pengen deh balik ke masa masa aku excited bgt buat Mabar n chatan ma km, btw aku udh denger ktnya km ilfeel ya sama aku? why plss tell me be the man you want to be, sifat mana yg km gasuka dari aku aku usahain buat ga ngerepotin km i want u be ur fav boy. Btw aku diem diem slalu ngikutin interest km hehe.
 
 Bilangin ke ortu km makasih udah ngelahirin cewek idaman aku😏,garing bat jir sori.. ok lanjut, ntah kenapa org' kalo ngeliat km pasti yg di liat sifat nya.. like "ohh si repi org nya giniah,sikapnya friendly lah" like wtf, tapi aku ngeliat km sebagai cewe yang damnn bruh u COOL ASF,selera musik km bagus,FASHION KM DAMNNNNNN,kalo paras sih biasa aja kayak bidadari pada umumnya,interest km keren,km orgnya lucuk sifatnya juga kek nyambung aja kalo ngobrol, Itu hal yg bikin aku suka sama km i love you 3000x times💗💗
 
@@ -178,11 +178,10 @@ Whatever your answer is, thank you for being someone worth knowing.
 </div>
 
 <!-- Put your legally obtained audio file beside index.html -->
-<audio id="song" loop>
-  <source src="scott-street.mp3" type="audio/mpeg">
+<audio id="song" autoplay loop>
+  <source src="./scott-street.mp3" type="audio/mpeg">
+  
 </audio>
-
-<script>
 
 // Falling pixel hearts
 const heartContainer = document.getElementById("hearts");
@@ -227,6 +226,13 @@ function toggleMusic() {
   }
 }
 
+  window.addEventListener("load", () => {
+  song.volume = 0.7;
+
+  song.play().catch(() => {
+    console.log("Autoplay blocked");
+  });
+});
 </script>
 
 </body>
