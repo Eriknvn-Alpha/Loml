@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>For My Angel ♡</title>
+<title>If u have time read this</title>
 
 <style>
 * {
@@ -204,10 +204,28 @@ function openLetter() {
   const letter = document.getElementById("letter");
   const button = document.getElementById("openBtn");
 
+  // Open the letter
   letter.style.display = "block";
+
   button.innerHTML = "Our little secret ♡";
   button.disabled = true;
+
+  // Play Scott Street
+  song.volume = 0.7;
+
+  song.play().then(() => {
+    musicBtn.innerHTML = "❚❚ Pause Music";
+  }).catch(() => {
+    musicBtn.innerHTML = "▶ Play Music";
+  });
+
+  // Scroll to letter
+  letter.scrollIntoView({
+    behavior: "smooth",
+    block: "start"
+  });
 }
+
 
 // Music
 const song = document.getElementById("song");
