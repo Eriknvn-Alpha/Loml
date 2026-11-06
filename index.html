@@ -178,9 +178,8 @@ Whatever your answer is, thank you for being someone worth knowing.
 </div>
 
 <!-- Put your legally obtained audio file beside index.html -->
-<audio id="song" autoplay loop>
+<audio id="song" loop>
   <source src="./scott-street.mp3" type="audio/mpeg">
-  
 </audio>
 
 // Falling pixel hearts
@@ -218,7 +217,6 @@ function openLetter() {
   }).catch(() => {
     musicBtn.innerHTML = "▶ Play Music";
   });
-  }
 
   // Scroll to letter
   letter.scrollIntoView({
