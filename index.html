@@ -241,32 +241,3 @@ function toggleMusic() {
 </html>
 
 
-
-// Music
-const song = document.getElementById("song");
-const musicBtn = document.getElementById("musicBtn");
-
-function toggleMusic() {
-  if (song.paused) {
-    song.play().then(() => {
-      musicBtn.innerHTML = "❚❚ Pause Music";
-    }).catch(() => {
-      alert("Please check your music file!");
-    });
-  } else {
-    song.pause();
-    musicBtn.innerHTML = "▶ Play Music";
-  }
-}
-
-  window.addEventListener("load", () => {
-  song.volume = 0.7;
-
-  song.play().catch(() => {
-    console.log("Autoplay blocked");
-  });
-});
-</script>
-
-</body>
-</html>
