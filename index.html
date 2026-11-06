@@ -182,6 +182,7 @@ Whatever your answer is, thank you for being someone worth knowing.
   <source src="./scott-street.mp3" type="audio/mpeg">
 </audio>
   
+
 <script>
 // Falling pixel hearts
 const heartContainer = document.getElementById("hearts");
@@ -189,28 +190,27 @@ const heartContainer = document.getElementById("hearts");
 for (let i = 0; i < 35; i++) {
   const heart = document.createElement("div");
   heart.className = "heart";
-  heart.innerHTML = ["♥", "♡", "❤", "💗"][Math.floor(Math.random()*4)];
-
+  heart.innerHTML = ["♥", "♡", "❤", "💗"][Math.floor(Math.random() * 4)];
   heart.style.left = Math.random() * 100 + "%";
-  heart.style.animationDuration = (5 + Math.random()*9) + "s";
+  heart.style.animationDuration = (5 + Math.random() * 9) + "s";
   heart.style.animationDelay = Math.random() * 8 + "s";
-  heart.style.fontSize = (10 + Math.random()*15) + "px";
-
+  heart.style.fontSize = (10 + Math.random() * 15) + "px";
   heartContainer.appendChild(heart);
 }
 
-// Open letter
+// Music
+const song = document.getElementById("song");
+const musicBtn = document.getElementById("musicBtn");
+
+// Open letter and play music
 function openLetter() {
   const letter = document.getElementById("letter");
   const button = document.getElementById("openBtn");
 
-  // Open the letter
   letter.style.display = "block";
-
   button.innerHTML = "Our little secret ♡";
   button.disabled = true;
 
-  // Play Scott Street
   song.volume = 0.7;
 
   song.play().then(() => {
@@ -219,12 +219,27 @@ function openLetter() {
     musicBtn.innerHTML = "▶ Play Music";
   });
 
-  // Scroll to letter
   letter.scrollIntoView({
     behavior: "smooth",
     block: "start"
   });
 }
+
+// Play and pause music
+function toggleMusic() {
+  if (song.paused) {
+    song.play().then(() => {
+      musicBtn.innerHTML = "❚❚ Pause Music";
+    });
+  } else {
+    song.pause();
+    musicBtn.innerHTML = "▶ Play Music";
+  }
+}
+</script>
+</body>
+</html>
+
 
 
 // Music
